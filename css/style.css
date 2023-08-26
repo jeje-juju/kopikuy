@@ -43,8 +43,6 @@ footer {
    flex-wrap: wrap;
 }
 
-
-
 /* 
 Kode @font-face untuk menginstall font ke dalam Website 
 src adalah untuk lokasi fontnya, font dapat di cari di website https://fonts.google.com/
@@ -56,47 +54,40 @@ dengan memberi nama family, maka kita mendaftarkan font tersebut ke dalam websit
    font-family: 'Poppins';
 }
 
+@font-face {
+   font-family: 'Abril Fatface';
+   font-style: normal;
+   font-weight: 400;
+   src: url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+}
+
+@font-face {
+   font-family: 'Montserrat', sans-serif;
+   font-style: normal;
+   font-weight: 400;
+   src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+}
+
 body {
+
    /* 
    mendaftarkan semua teks pada body menjadi family Poppins 
    kenapa pada body? karena elemen body membungkus semua elemen dari nav section sampai footer
    */
-   font-family: 'Poppins';
 
    @font-face {
-      font-family: 'Irish Grover';
-      font-style: normal;
-      font-weight: 400;
-      src: url(https://fonts.gstatic.com/s/irishgrover/v23/buExpoi6YtLz2QW7LA4flVgv__RP.woff2) format('woff2');
+      src: url(../fonts/poppins.woff2);
+      font-family: 'Poppins';
    }
 
-   h2 {
-      font-family: 'Irish Grover';
+   font-family: 'Poppins';
+   color: #503431;
+
+   p {
+      font-family: 'Montserrat', sans-serif;
    }
+
 }
-
-/*
-Misalnya ada font dari google yang bernama Irish Grover yang berada di:
-https://fonts.gstatic.com/s/irishgrover/v23/buExpoi6YtLz2QW7LA4flVgv__RP.woff2
-
-maka bisa coba copy kode berikut untuk menginstall font tadi:
-
-@font-face {
-  font-family: 'Irish Grover';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/irishgrover/v23/buExpoi6YtLz2QW7LA4flVgv__RP.woff2) format('woff2');
-}
-
-Jika kode di atas sudah di copy
-Nanti pada element yang ingin menggunakan font Irish Grover Tadi, tinggal diganti font-familynya
-misal mau mengganti h1 dan h2 maka kodenya sebagai berikut:
-
-h1,h2 {
-   font-family: 'Irish Grover';
-}
-
-*/
 
 
 a {
@@ -110,20 +101,32 @@ a {
    color: unset;
 }
 
+h1 {
+   font-size: 48px;
+
+   @font-face {
+      font-family: 'Abril Fatface';
+      font-style: bold;
+      font-weight: 400;
+      src: url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+   }
+
+   font-family: 'Abril Fatface';
+}
+
 h2 {
-   /* mengatur ukuran huruf ke 34 pixel */
    font-size: 34px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-style: italic;
 }
 
 h3 {
-   /* mengatur ukuran huruf ke 1.2rem */
    font-size: 1.2rem;
 }
 
 h1,
 h2,
 h3 {
-   /* mengatur tebal huruf bisa bold, normal*/
    font-weight: bold;
 }
 
@@ -139,8 +142,8 @@ img {
 /* Navigasi */
 
 nav {
-   background-color: #198754;
-   box-shadow: 0 3px 7px -2px #000;
+   background-color: #4b6c57;
+   box-shadow: 0 3px 7px -2px #503431;
    width: 100%;
    padding-top: 10px;
    padding-bottom: 10px;
@@ -149,7 +152,7 @@ nav {
 }
 
 img.logo {
-   height: 40px;
+   height: 50px;
    margin-left: 20px;
 }
 
@@ -166,7 +169,7 @@ nav a {
 }
 
 nav a:hover {
-   color: #000;
+   color: #e77431;
 }
 
 a.shop {
@@ -175,7 +178,7 @@ a.shop {
 
 a.chat {
    margin-right: 30px;
-   background-color: rgb(8, 69, 8);
+   background-color: #55a393;
    color: #fff;
    padding-top: 5px;
    padding-right: 15px;
@@ -184,6 +187,10 @@ a.chat {
    border-radius: 10px;
 }
 
+a.chat:hover {
+   color: #503431;
+   transform: scale(105%)
+}
 
 /* 
    PERHATIKAN bahwa dalam mengatur elemen, nama elemen langsung ditulis
@@ -200,14 +207,21 @@ header,
 section {
    padding-top: 80px;
    padding-bottom: 80px;
-   margin-bottom: 80px;
 }
 
 
-header div.kiri,
-header div.kanan {
-   width: 50%;
+header div.kiri {
+   width: 30%;
    padding: 50px;
+}
+
+header div.kanan {
+   width: 70%;
+   padding: 50px;
+}
+
+header div.kanan img {
+   border-radius: 25px 25px 25px 25px;
 }
 
 header h1 {
@@ -217,10 +231,11 @@ header h1 {
 header p {
    font-size: 18px;
    margin-bottom: 20px;
+   text-align: justify;
 }
 
 div.olshop img {
-   width: 40px;
+   width: 50px;
    aspect-ratio: 1;
    margin-right: 10px;
    transition: all 0.3s ease;
@@ -236,9 +251,11 @@ section.best-seller {
    position: relative;
 
    /* background-color mengatur warna latar belakang elemen */
-   background-color: #EEE6DC;
+   background-color: #e77431;
+   box-shadow: inset 0px 0px 23px -6px #503431;
 
    /* text-align mengatur rata tulisan, bisa bernilai: left, right, center, justify */
+   color: #2b1c1a;
    text-align: center;
 }
 
@@ -247,29 +264,7 @@ terkait position, after, dan before memerlukan pemahaman mendalam
 terkait layout pada CSS untuk dapat memahami secara penuh 
 */
 
-section.best-seller::before,
-section.best-seller::after {
-   position: absolute;
-   content: "";
-   width: 100%;
-   height: 76px;
 
-   /* background-image untuk menambahkan gambar sebagai background */
-   background-image: url(../images/background/garis-atas.png);
-
-   /*background-size agar gambar latar menyesuaikan tinggi / lebar elemen */
-   background-size: cover;
-
-   top: -60px;
-   left: 0;
-}
-
-section.best-seller::after {
-   height: 60px;
-   background-image: url(../images/background/garis-bawah.png);
-   top: unset;
-   bottom: -60px;
-}
 
 section.best-seller h2 {
    margin-bottom: 20px;
@@ -295,6 +290,7 @@ div.produk {
    */
    padding: 20px;
    width: 25%;
+
 }
 
 div.produk img {
@@ -305,7 +301,7 @@ div.produk img {
    border-radius: 15px;
 
    /* box-shadow membuat efek bayangan */
-   box-shadow: 0 3px 10px -2px #000;
+   box-shadow: 0 3px 10px -2px #503431;
 }
 
 /*
@@ -328,9 +324,6 @@ div.produk p {
    margin-top: 15px;
    font-weight: bold;
 }
-
-
-
 
 /* About US */
 
@@ -357,6 +350,7 @@ section.about-us img {
    width: 800px;
    max-width: 100%;
    margin: auto;
+   border-radius: 25px 25px 25px 25px;
 }
 
 /*
@@ -376,8 +370,9 @@ section.about-us p:nth-child(4) {
 /* OUR TEAM */
 
 section.our-team {
-   background-color: #EEE6DC;
-   box-shadow: inset 0px 0px 23px -6px #707070;
+   background-color: #55a393;
+   color: #2b1c1a;
+   box-shadow: inset 0px 0px 23px -6px #503431;
    text-align: center;
 }
 
@@ -405,15 +400,13 @@ div.team img {
    width: 100%;
    aspect-ratio: 1/1;
    object-fit: cover;
-   box-shadow: 0 3px 10px -2px #000;
+   box-shadow: 0 3px 10px -2px#503431;
    border-radius: 50px 0px 50px 0px;
    margin-bottom: 10px;
    transition: all 0.3s ease;
 }
 
 div.team img:hover {
-
-   /* membuat transformasi, bisa berupa scale(1.05), rotate(180deg), translateY(-50px), dsb */
    transform: scale(0.9);
    border-radius: 50%;
 }
@@ -458,8 +451,10 @@ div.testimoni {
    display: flex;
    flex-wrap: wrap;
    padding: 35px 50px;
+   border-radius: 25px 25px 25px 25px;
    box-shadow: 0px 0px 12px -10px #000;
    background-color: #fff;
+   transition: 0.3s ease;
 }
 
 div.testimoni img {
@@ -467,6 +462,10 @@ div.testimoni img {
    height: 60px;
    margin-right: 15px;
    object-fit: cover;
+}
+
+div.testimoni:hover {
+   transform: scale(110%);
 }
 
 div.profile {
@@ -484,6 +483,12 @@ div.profile p {
 div.testimoni>p {
    width: 100%;
    text-align: left;
+   filter: blur(3px);
+   transition: 0.3s ease;
+}
+
+div.testimoni>p:hover {
+   filter: blur(0px);
 }
 
 
@@ -501,16 +506,21 @@ section.contact-us iframe {
 div.kontak {
    width: 30%;
    /* color mengatur warna tulisan */
-   color: green;
+   color: #55a393;
    text-align: center;
    margin-top: 50px;
+   transition: 0.3s ease;
+}
+
+div.kontak>p:hover {
+   color: #b5302b;
 }
 
 
 /* FOOTER */
 
 footer {
-   background-color: #198754;
+   background-color: #4b6c57;
    padding-top: 15px;
    padding-bottom: 15px;
    color: #fff;
@@ -525,7 +535,13 @@ footer div.navigasi {
 
 footer div.navigasi a {
    padding: 8px;
+   transition: 0.3s ease;
 }
+
+footer div.navigasi a:hover {
+   color: #e77431;
+}
+
 
 /* UNTUK kode RESPONSIF hari ke 3 tulis DI BAWAH sini */
 
@@ -546,6 +562,10 @@ footer div.navigasi a {
       text-align: center;
    }
 
+   header div.kiri>p {
+      text-align: center;
+   }
+
    div.produk,
    div.kontak,
    div.team {
@@ -555,6 +575,10 @@ footer div.navigasi a {
    div.testimoni {
       width: 100%;
       margin-bottom: 20px;
+   }
+
+   div.kontak {
+      width: 100%;
    }
 }
 
